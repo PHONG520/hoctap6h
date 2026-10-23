@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#243b73">
+  <meta name="description" content="Kho đề cương và tài liệu ôn tập theo từng năm học.">
+  <title>StudyShelf — Kho đề cương học tập</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<header class="hero">
+  <nav class="nav shell">
+    <a class="brand" href="#"><span class="brand-mark">S</span><span>StudyShelf<small>KHO TÀI LIỆU HỌC TẬP</small></span></a>
+    <a class="nav-admin" href="#admin">Quản trị <span>↗</span></a>
+  </nav>
+  <div class="hero-grid shell">
+    <div class="hero-copy">
+      <div class="eyebrow"><span class="pulse"></span> HÀNH TRÌNH TRI THỨC</div>
+      <h1>Mỗi năm một lớp,<br><em>kiến thức luôn còn.</em></h1>
+      <p>Kho đề cương dành riêng cho hành trình học tập của bạn. Lên lớp mới mỗi năm, tài liệu các năm trước vẫn được lưu lại để xem và ôn tập.</p>
+      <a class="hero-button" href="#library">Khám phá thư viện <span>↓</span></a>
+      <div class="hero-note"><span>✓</span> Lưu trữ theo lớp · Dễ tìm · Dễ tải về</div>
+    </div>
+    <div class="year-art" aria-hidden="true">
+      <div class="year-ring ring-one"></div><div class="year-ring ring-two"></div>
+      <div class="year-card card-back"><span>2026—2027</span><b>LỚP 6</b><small>NỀN TẢNG</small></div>
+      <div class="year-card card-front"><span>HÀNH TRÌNH HỌC TẬP</span><b>6 <i>→</i> 7 <i>→</i> 8 <i>→</i> 9</b><small>MỖI NĂM THÊM MỘT CHẶNG ĐƯỜNG</small></div>
+      <div class="spark spark-one">✦</div><div class="spark spark-two">✧</div>
+    </div>
+  </div>
+</header>
+<main class="shell main">
+  <section class="current-banner">
+    <div class="current-icon">⌂</div><div class="current-copy"><span class="kicker">LỚP ĐANG THEO HỌC</span><h2 id="currentTitle">Lớp 6 <span>·</span> Hành trình bắt đầu</h2><p id="currentSub">Chọn lớp để xem tài liệu của năm học đó.</p></div>
+    <div class="grade-pill" id="currentPill">KHỐI 6</div>
+  </section>
+
+  <section id="library" class="library-section">
+    <div class="section-head"><div><span class="kicker">THƯ VIỆN CỦA BẠN</span><h2>Chọn lớp để học</h2><p>Tài liệu sẽ được giữ lại theo từng lớp, kể cả khi bạn lên lớp mới.</p></div><div class="total-box"><strong id="totalCount">0</strong><span>tài liệu</span></div></div>
+    <div class="grade-tabs" role="tablist" aria-label="Chọn khối lớp">
+      <button class="grade-tab active" data-grade="6"><span>LỚP</span><b>06</b><small>Năm đầu</small></button>
+      <button class="grade-tab" data-grade="7"><span>LỚP</span><b>07</b><small>Tiếp nối</small></button>
+      <button class="grade-tab" data-grade="8"><span>LỚP</span><b>08</b><small>Phát triển</small></button>
+      <button class="grade-tab" data-grade="9"><span>LỚP</span><b>09</b><small>Về đích</small></button>
+    </div>
+    <div class="toolbar">
+      <div class="search-box"><span>⌕</span><input id="search" placeholder="Tìm tên đề cương, tài liệu…" aria-label="Tìm tài liệu"></div>
+      <select id="subjectFilter" aria-label="Lọc theo môn học"><option value="">Tất cả môn học</option><option>Toán</option><option>Ngữ văn</option><option>Tiếng Anh</option><option>Tin học</option><option>Khoa học tự nhiên</option><option>Lịch sử và Địa lí</option><option>Giáo dục công dân</option><option>Công nghệ</option><option>Khác</option></select>
+      <button id="refresh" class="refresh-button" title="Làm mới">↻</button>
+    </div>
+    <div id="fileList" class="file-grid"><div class="empty">Đang tải tài liệu…</div></div>
+    <div class="library-foot"><span class="safe-dot"></span> Tài liệu được sắp xếp theo lớp và môn học <span class="foot-right">Được lưu cho các năm học tiếp theo</span></div>
+  </section>
+
+  <section class="admin-section" id="admin">
+    <div class="admin-heading"><div class="admin-icon">＋</div><div><span class="kicker">CHỈ DÀNH CHO QUẢN TRỊ VIÊN</span><h2>Quản lý kho tài liệu</h2><p>Thêm đề cương mới hoặc chuyển lớp hiện tại khi bước sang năm học mới.</p></div></div>
+    <button id="toggleAdmin" class="admin-toggle">Mở khu vực quản trị <span>＋</span></button>
+    <div id="adminPanel" class="admin-panel">
+      <label for="password">Mật khẩu quản trị</label><input id="password" type="password" placeholder="Nhập UPLOAD_PASSWORD trên Render" autocomplete="current-password">
+      <div class="admin-settings">
+        <div><label for="currentGradeSelect">Lớp hiện tại</label><select id="currentGradeSelect"><option value="6">Lớp 6</option><option value="7">Lớp 7</option><option value="8">Lớp 8</option><option value="9">Lớp 9</option></select></div>
+        <button id="saveGrade" class="outline-button">Cập nhật lớp hiện tại</button>
+      </div>
+      <div class="upload-form">
+        <div class="form-row"><div><label for="uploadGrade">Lưu tài liệu vào lớp</label><select id="uploadGrade"><option value="6">Lớp 6</option><option value="7">Lớp 7</option><option value="8">Lớp 8</option><option value="9">Lớp 9</option></select></div><div><label for="uploadSubject">Môn học</label><select id="uploadSubject"><option>Toán</option><option>Ngữ văn</option><option>Tiếng Anh</option><option>Tin học</option><option>Khoa học tự nhiên</option><option>Lịch sử và Địa lí</option><option>Giáo dục công dân</option><option>Công nghệ</option><option>Khác</option></select></div></div>
+        <label for="description">Mô tả ngắn (không bắt buộc)</label><input id="description" class="text-input" maxlength="300" placeholder="Ví dụ: Đề cương ôn tập học kỳ I">
+        <div class="drop-zone" id="dropZone"><div class="upload-symbol">↑</div><b>Kéo thả tài liệu vào đây</b><p>hoặc chọn file từ thiết bị</p><input id="filePicker" type="file" multiple accept=".pdf,.doc,.docx,.ppt,.pptx,.xls,.xlsx,.txt,.md,.zip,.rar,.jpg,.jpeg,.png"><small>PDF, Word, PowerPoint, Excel, TXT, ZIP/RAR, ảnh · tối đa 100 MB/file</small></div>
+        <button id="uploadButton" class="primary-button">Tải tài liệu lên <span>↑</span></button>
+        <div id="adminStatus" class="status" role="status"></div>
+      </div>
+      <div class="manage-title"><b>Quản lý tài liệu đã đăng</b><small>Chuyển lớp, đổi môn hoặc xóa tài liệu.</small></div>
+      <div id="manageList" class="manage-list"><p class="empty">Đang tải…</p></div>
+    </div>
+  </section>
+  <footer class="footer"><a class="footer-brand" href="#"><span class="brand-mark small-mark">S</span> StudyShelf</a><p>Gom góp kiến thức hôm nay, vững bước ngày mai.</p><div class="copyright">© 2026 <strong>Nguyễn Như Phong</strong>. All rights reserved.</div><small class="footer-note">Kho đề cương học tập cá nhân · Lưu trữ theo từng chặng lớp 6–9</small></footer>
+</main>
+<script src="./js/app.js" defer></script>
+</body>
+</html>
